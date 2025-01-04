@@ -45,12 +45,13 @@ git clone https://github.com/iiop123/dingding.git
 cd dingding && npm i
 
 #修改wrangler.toml中 id 为你创建的KV数据库id
+npx wrangler kv namespace create LINK
 kv_namespaces = [
   { binding = "LINK", id = "111",preview_id='111'}
 ]
 
 #最后执行publish推送到workers即可
- wrangler publish
+ npx wrangler publish
 ```
 >### 关于后台
 #### 可以访问 /list.html 页面查看已经上传的数据，密码为123 可以在 src/index.js文件中修改密码
